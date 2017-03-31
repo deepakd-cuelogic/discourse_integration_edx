@@ -808,7 +808,10 @@ def dashboard(request):
 @login_required
 @ensure_csrf_cookie
 def discussion(request):
-    discourse_url = 'http://192.168.33.10/'
+    """
+    Should render the discourse forum template with other Info.
+    """
+    discourse_url = 'http://172.21.32.61:8080/' # local-machine IP with Mapped port.
     if request.GET.get('topic'):
         discourse_url += 't/'+ request.GET.get('topic') +'/'
     user = request.user
